@@ -383,8 +383,8 @@ func randomChunk(t *testing.T) chunkenc.Chunk {
 	len := rand.Int() % 120
 	app, err := chunk.Appender()
 	testutil.Ok(t, err)
-	val := make([]byte, 4)
 	for i := 0; i < len; i++ {
+		val := make([]byte, 4)
 		rand.Read(val)
 		app.Append(rand.Int63(), val)
 	}
